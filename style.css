@@ -1,0 +1,236 @@
+:root {
+  /* Primary */
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+  /* Neutral */
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  color: var(--Marine-blue);
+}
+
+nav {
+  background-image: url(./Static/images/bg-sidebar-desktop.svg);
+  background-position: center;
+  background-size: cover;
+}
+.container-fluid {
+  background-color: var(--Light-gray);
+  height: 100vh;
+}
+.main-section {
+  background-color: var(--White);
+  border-radius: 0.5rem;
+  border: 0.5rem solid white;
+  min-height: 80%;
+}
+
+.step-num {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#steps-bar {
+  background-image: url("images/bg-sidebar-desktop.svg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.7rem;
+  height: 100%;
+}
+.step-num.active {
+  background-color: var(--Light-blue);
+}
+
+p.step-num {
+  color: var(--White);
+}
+p.step-num.active {
+  color: black;
+}
+.step-description {
+  color: var(--Light-gray);
+}
+.info {
+  color: var(--White);
+  font-weight: 700;
+}
+
+#page-heading {
+  font-weight: 800;
+  color: var(--Marine-blue);
+}
+#page-description {
+  color: var(--Cool-gray);
+}
+
+.all-plans {
+  display: flex;
+  justify-content: space-between;
+}
+.plan-option {
+  flex-basis: 30%;
+}
+
+.plan-option {
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0 0.6rem;
+  padding-top: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+.plan-logo {
+  margin-bottom: 3rem;
+}
+.plan-option:hover {
+  background-color: #f0f0f0;
+}
+.plan-option.selected {
+  border-color: var(--Purplish-blue);
+  background-color: var(--Magnolia);
+}
+
+.toggle-year {
+  background-color: var(--Magnolia);
+  border-radius: 0.5rem;
+}
+
+.add-on-container {
+  border: 1px solid var(--Light-gray);
+  border-radius: 0.5rem;
+}
+.add-on-container.selected {
+  border-color: var(--Marine-blue);
+  background-color: var(--Magnolia);
+}
+.add-on {
+  color: var(--Marine-blue);
+  font-weight: 700;
+}
+.top-wrapper {
+  padding: 0.5rem;
+  background-color: var(--Magnolia);
+}
+
+#thank-you {
+  height: 100%;
+  margin: 0-auto;
+}
+.buttons {
+  position: relative;
+}
+#next-button {
+  background-color: var(--Marine-blue);
+  color: var(--Magnolia);
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+}
+#prev-button {
+  cursor: pointer;
+  color: var(--Magnolia);
+  font-weight: 800;
+  position: absolute;
+  left: 0;
+  bottom: 0.3rem;
+}
+#prev-button:hover {
+  color: var(--Marine-blue);
+}
+
+.clr-grey {
+  color: var(--Cool-gray);
+}
+
+/* ======================================= */
+@media (width<=764px) {
+  .main-section {
+    border: none;
+  }
+  .padding-col {
+    background-color: var(--Light-gray);
+  }
+  .forms-page-content {
+    background-color: var(--White);
+    z-index: 3445;
+    border-collapse: collapse;
+  }
+  .form-header-section {
+    transform: translateY(-6rem);
+    background-color: var(--White);
+    border: 3px solid var(--White);
+    border-radius: 0.6rem;
+    padding: 0.6rem;
+  }
+  .forms {
+    background-color: var(--White);
+  }
+
+  nav {
+    background-image: url(./Static/images/bg-sidebar-mobile.svg);
+  }
+  #steps-bar {
+    background-image: url("images/bg-sidebar-mobile.svg");
+    background-position: center;
+    background-size: cover;
+    height: 15rem;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0%;
+    padding: 0 !important;
+  }
+  .buttons-inside {
+    display: none;
+  }
+
+  .step-detail {
+    display: none;
+  }
+  .step-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .all-plans {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+
+  .plan-option {
+    display: flex !important;
+    flex-basis: 30%;
+  }
+  .plan-logo {
+    flex-basis: 25%;
+    padding-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .plan-details {
+    flex-grow: 1;
+  }
+}
