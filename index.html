@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Multipage Form</title>
     <link rel="stylesheet" href="./style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -12,16 +12,14 @@
       crossorigin="anonymous"
     />
   </head>
-
   <body>
     <main
-      class="container-fluid row g-0 justify-content-center align-items-start align-items-md-center min-vh-100"
+      class="container-fluid row g-0 justify-content-center align-items-lg-center vh-100 align-items-start"
     >
-      <section class="col-lg-9 col-md-9 col-sm-12 g-0 m-0 row main-section">
-        <!-- Left Side -->
-        <nav class="co-lg-4 col-md-4 col-sm-12 pt-3 row g-0">
-          <section
-            class="col-lg-12 progress-tracker py-4 d-lg-flex flex-column justify-content-start row g-0"
+      <section class="col-lg-8 col-12 row g-0">
+        <aside class="col-lg-3 col-12 row g-0">
+          <nav
+            class="col-lg-12 progress-tracker py-4 d-lg-flex flex-lg-column row g-0"
             id="steps-bar"
           >
             <div
@@ -83,289 +81,252 @@
                 </div>
               </div>
             </div>
-          </section>
-        </nav>
-        <!-- Right Side -->
-        <article class="col-lg-8 col-md-8 col-sm-12 row g-0 forms-page-content">
-          <div class="header-information col-12 row g-0">
-            <div class="col-1 padding-col padding-col"></div>
-            <div class="col-10">
-              <div class="row g-0 form-header-section">
-                <div class="col-12 mb-4 page-description">
-                  <h1 id="page-heading">Page Description</h1>
-                  <p id="page-description">Description about it</p>
+          </nav>
+        </aside>
+        <div class="col-lg-1 d-lg-block d-none"></div>
+        <article
+          class="right col-lg-7 col-12 row g-0 d-flex justify-content-center"
+        >
+          <div class="page-header col-lg-12 col-9">
+            <img
+              src="./Static/images/icon-thank-you.svg"
+              alt=""
+              class="d-none"
+              id="thank-you"
+            />
+            <h3 id="page-heading" class="mt-4">Header and Forms</h3>
+            <p id="page-description">Description about it</p>
+            <!-- Form Page 1: For Personal Details -->
+            <form id="personal-details" class="forms d-none px-2">
+              <div class="mb-3 user-detail">
+                <label for="name" class="form-label"
+                  >Name<span id="error-name" class="d-none error-span"
+                    >This field is required</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="e.g. Stephen King "
+                />
+              </div>
+
+              <div class="mb-3 user-detail">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email address<span id="error-email" class="d-none error-span"
+                    >This field is required</span
+                  ></label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="e.g. stephenking@lorem.com"
+                />
+              </div>
+
+              <div class="mb-3 user-detail">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Phone Number<span id="error-phone" class="d-none error-span"
+                    >This field is required</span
+                  ></label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="e.g. +91-9178353527"
+                />
+              </div>
+            </form>
+            <!-- Form Page 2: For Chosing Plan -->
+            <div id="select-plan" class="select-plan d-none forms">
+              <div class="all-plans mb-3">
+                <div class="plan-option plan-option-clicked" id="Arcade">
+                  <div class="plan-logo plan-option-clicked">
+                    <img
+                      src=""
+                      alt=""
+                      id="arcade-logo"
+                      class="plan-option-clicked"
+                    />
+                  </div>
+                  <div class="plan-details plan-option-clicked">
+                    <p class="mb-0 option plan-option-clicked">Arcade</p>
+                    <p
+                      id="arcade-price"
+                      class="mb-0 plan-option-clicked plan-price"
+                    ></p>
+                  </div>
                 </div>
-                <div class="col-12">
-                  <!-- Form Page 1: For Personal Details -->
-                  <form id="personal-details" class="forms d-none">
-                    <div class="mb-3">
-                      <label for="name" class="form-label">Name</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="e.g. Stephen King "
-                      />
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                        placeholder="e.g. stephenking@lorem.com"
-                      />
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"
-                        >Phone Number</label
-                      >
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="exampleInputPassword1"
-                        placeholder="e.g. +91-9178353527"
-                      />
-                    </div>
-                  </form>
-                  <!-- Form Page 2: For Chosing Plan -->
-                  <div id="select-plan" class="select-plan d-none forms">
-                    <div class="all-plans mb-3">
-                      <div class="plan-option plan-option-clicked" id="Arcade">
-                        <div class="plan-logo plan-option-clicked">
-                          <img
-                            src=""
-                            alt=""
-                            id="arcade-logo"
-                            class="plan-option-clicked"
-                          />
-                        </div>
-                        <div class="plan-details plan-option-clicked">
-                          <p class="mb-0 option plan-option-clicked">Arcade</p>
-                          <p
-                            id="arcade-price"
-                            class="mb-0 plan-option-clicked"
-                          ></p>
-                        </div>
-                      </div>
-                      <div class="plan-option plan-option-clicked" id="Advance">
-                        <div class="plan-logo plan-option-clicked">
-                          <img
-                            src=""
-                            alt=""
-                            id="advance-logo"
-                            class="plan-option-clicked"
-                          />
-                        </div>
-                        <div class="plan-details plan-option-clicked">
-                          <p class="mb-0 option plan-option-clicked">Advance</p>
-                          <p
-                            id="advance-price"
-                            class="mb-0 plan-option-clicked"
-                          ></p>
-                        </div>
-                      </div>
-
-                      <div class="plan-option g-0 plan-option-clicked" id="Pro">
-                        <div class="plan-logo plan-option-clicked">
-                          <img src="" alt="" id="pro-logo" />
-                        </div>
-                        <div class="plan-details plan-option-clicked">
-                          <p class="mb-0 option plan-option-clicked">Pro</p>
-                          <p
-                            id="pro-price"
-                            class="mb-0 plan-option-clicked"
-                          ></p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Toggle Switch -->
-                    <div
-                      class="toggle-year col-12 row g-0 d-flex align-items-center p-2 border border-rounded"
-                    >
-                      <div class="col-5 text-end pe-1">Monthly</div>
-                      <div class="col-2 d-flex justify-content-center">
-                        <div class="form-check form-switch pt-1">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="flexSwitchCheckChecked"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-5">Yearly</div>
-                    </div>
+                <div class="plan-option plan-option-clicked" id="Advance">
+                  <div class="plan-logo plan-option-clicked">
+                    <img
+                      src=""
+                      alt=""
+                      id="advance-logo"
+                      class="plan-option-clicked"
+                    />
                   </div>
-                  <!-- For Add Ons -->
-                  <div id="add-ons" class="add-ons forms mt-4">
-                    <div
-                      class="row mb-3 add-on-container g-0 d-flex align-items-center py-2"
-                    >
-                      <div class="input-checkbox col-2 text-center">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="onlineServiceCheckbox"
-                        />
-                      </div>
-
-                      <div class="online-service d-flex flex-column col-6">
-                        <label
-                          class="form-check-label add-on"
-                          for="onlineServiceCheckbox"
-                        >
-                          Online Service
-                        </label>
-                        <p class="mb-0 clr-grey">
-                          Access to multiplayer games.
-                        </p>
-                      </div>
-                      <div class="div price-div col-3 text-center">
-                        <span class="col-lg-3" id="onlineServicePrice"
-                          >$1/month</span
-                        >
-                      </div>
-                    </div>
-
-                    <div
-                      class="row g-0 mb-3 add-on-container d-flex align-items-center py-2"
-                    >
-                      <div class="input-checkbox col-2 text-center">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="largeStorageCheckbox"
-                        />
-                      </div>
-
-                      <div class="large-storage col-6 d-flex flex-column">
-                        <label
-                          class="form-check-label add-on"
-                          for="largeStorageCheckbox"
-                        >
-                          Large Storage
-                        </label>
-                        <p class="mb-0 clr-grey">Extra 1TB of cloud save</p>
-                      </div>
-                      <div class="price-div col-3 text-center">
-                        <span class="" id="localStoragePrice">$2/month</span>
-                      </div>
-                    </div>
-
-                    <div
-                      class="mb-3 row add-on-container g-0 d-flex align-items-center py-2"
-                    >
-                      <div class="check-box col-2 text-center">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="customizableProfileCheckbox"
-                        />
-                      </div>
-
-                      <div
-                        class="customizable-profile d-flex flex-column col-6"
-                      >
-                        <label
-                          class="form-check-label add-on"
-                          for="customizableProfileCheckbox"
-                        >
-                          Customizable Profile
-                        </label>
-                        <p class="mb-0 clr-grey">
-                          Custom theme on your profile
-                        </p>
-                      </div>
-                      <div class="price-div col-3 text-center">
-                        <span class="" id="customizableProfilePrice"
-                          >$2/month</span
-                        >
-                      </div>
-                    </div>
+                  <div class="plan-details plan-option-clicked">
+                    <p class="mb-0 option plan-option-clicked">Advance</p>
+                    <p
+                      id="advance-price"
+                      class="mb-0 plan-option-clicked plan-price"
+                    ></p>
                   </div>
-                  <!-- For Finishing up -->
-                  <div id="finishing-up" class="d-none forms">
-                    <div class="top-wrapper my-2">
-                      <div class="row d-flex justify-content-between g-0 mt-3">
-                        <div
-                          class="selected-plan-row d-flex flex-column col-6 text-start"
-                        >
-                          <p id="plan-selected" class="mb-1">Plan</p>
-                          <p id="change-page-button">Change</p>
-                        </div>
-                        <div class="col-6 text-end" id="price">Price</div>
-                        <hr />
-                      </div>
-                      <div class="row g-0" id="add-ons-selected"></div>
-                    </div>
-                    <div class="total-amount row g-0">
-                      <div
-                        class="total-header text-start col-6 clr-grey"
-                        id="total-bill"
-                      >
-                        <p>Total(Per Month)</p>
-                      </div>
-                      <div class="total col-6 text-end" id="total-amount">
-                        <p class="text-end total-sum">Total</p>
-                      </div>
-                    </div>
+                </div>
+
+                <div class="plan-option g-0 plan-option-clicked" id="Pro">
+                  <div class="plan-logo plan-option-clicked">
+                    <img src="" alt="" id="pro-logo" />
                   </div>
-                  <!-- For thank you -->
-                  <div
-                    id="thank-you"
-                    class="d-none forms mt-5 d-flex flex-column justify-content-center align-items-center"
+                  <div class="plan-details plan-option-clicked">
+                    <p class="mb-0 option plan-option-clicked">Pro</p>
+                    <p
+                      id="pro-price"
+                      class="mb-0 plan-option-clicked plan-price"
+                    ></p>
+                  </div>
+                </div>
+              </div>
+              <!-- Toggle Switch -->
+              <div
+                class="toggle-year col-12 row g-0 d-flex align-items-center p-2 border border-rounded"
+              >
+                <div class="col-5 text-end pe-1">Monthly</div>
+                <div class="col-2 d-flex justify-content-center">
+                  <div class="form-check form-switch pt-1">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="flexSwitchCheckChecked"
+                    />
+                  </div>
+                </div>
+                <div class="col-5">Yearly</div>
+              </div>
+            </div>
+            <!-- Form Page 3: For Add Ons  -->
+            <div id="add-ons" class="add-ons forms mt-4 d-none">
+              <div
+                class="row mb-3 add-on-container g-0 d-flex align-items-center py-2"
+              >
+                <div class="input-checkbox col-2 text-center">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="onlineServiceCheckbox"
+                  />
+                </div>
+
+                <div class="online-service d-flex flex-column col-6">
+                  <label
+                    class="form-check-label add-on"
+                    for="onlineServiceCheckbox"
                   >
-                    <div class="thank-you-img">
-                      <img
-                        src="./Static/images/icon-thank-you.svg"
-                        alt=""
-                        class="mt-5 mb-3"
-                      />
-                    </div>
-                    <div class="thank-you-heading">
-                      <h1>Thank You</h1>
-                    </div>
-                    <div class="thank-you-description text-center">
-                      <p class="clr-grey">
-                        Thanks for confirming your subscription! We hope you
-                        have fun using our platform. If you ever need support,
-                        please feel free to email us at support@loremgaming.com
-                      </p>
-                    </div>
-                  </div>
+                    Online Service
+                  </label>
+                  <p class="mb-0 clr-grey">Access to multiplayer games.</p>
+                </div>
+                <div class="div price-div col-3 text-center">
+                  <span class="col-lg-3" id="onlineServicePrice">$1/month</span>
+                </div>
+              </div>
+
+              <div
+                class="row g-0 mb-3 add-on-container d-flex align-items-center py-2"
+              >
+                <div class="input-checkbox col-2 text-center">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="largeStorageCheckbox"
+                  />
+                </div>
+
+                <div class="large-storage col-6 d-flex flex-column">
+                  <label
+                    class="form-check-label add-on"
+                    for="largeStorageCheckbox"
+                  >
+                    Large Storage
+                  </label>
+                  <p class="mb-0 clr-grey">Extra 1TB of cloud save</p>
+                </div>
+                <div class="price-div col-3 text-center">
+                  <span class="" id="localStoragePrice">$2/month</span>
+                </div>
+              </div>
+
+              <div
+                class="mb-3 row add-on-container g-0 d-flex align-items-center py-2"
+              >
+                <div class="check-box col-2 text-center">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="customizableProfileCheckbox"
+                  />
+                </div>
+
+                <div class="customizable-profile d-flex flex-column col-6">
+                  <label
+                    class="form-check-label add-on"
+                    for="customizableProfileCheckbox"
+                  >
+                    Customizable Profile
+                  </label>
+                  <p class="mb-0 clr-grey">Custom theme on your profile</p>
+                </div>
+                <div class="price-div col-3 text-center">
+                  <span class="" id="customizableProfilePrice">$2/month</span>
                 </div>
               </div>
             </div>
-            <div class="col-1 padding-col"></div>
-          </div>
-
-          <div class="row g-0 container-buttons padding-col p-2">
-            <div class="col-1"></div>
-
-            <div class="buttons col-10 row g-0">
-              <div class="">
-                <button id="prev-button" class="btn btn-primary btn-sm">
-                  Go Back
-                </button>
+            <!-- Form Page 3: Finishing up -->
+            <div id="finishing-up" class="forms">
+              <div class="top-wrapper my-2">
+                <div class="row d-flex justify-content-between g-0 mt-3">
+                  <div
+                    class="selected-plan-row d-flex flex-column col-6 text-start"
+                  >
+                    <p id="plan-selected" class="mb-1">Plan</p>
+                    <p id="change-page-button">Change</p>
+                  </div>
+                  <div class="col-6 text-end" id="price">Price</div>
+                  <hr />
+                </div>
+                <div class="row g-0" id="add-ons-selected"></div>
               </div>
-              <!-- <div class=""></div> -->
-              <div class="">
-                <button id="next-button" class="btn btn-primary btn-sm">
-                  Next Step
-                </button>
+              <div class="total-amount row g-0">
+                <div
+                  class="total-header text-start col-6 clr-grey ps-2"
+                  id="total-bill"
+                >
+                  <p>Total(Per Month)</p>
+                </div>
+                <div class="total col-6 text-end pe-3" id="total-amount">
+                  <p class="text-end total-sum">Total</p>
+                </div>
               </div>
             </div>
-
-            <div class="col-1"></div>
+          </div>
+          <!-- Buttons -->
+          <div class="buttons col-12 row g-0 d-flex align-items-center">
+            <div class="prev-btn col-6 d-flex justify-content-start">
+              <p id="prev-button">Go Back</p>
+            </div>
+            <div class="next-btn col-6 d-flex justify-content-end">
+              <button id="next-button" class="btn btn-sm">Next Step</button>
+            </div>
           </div>
         </article>
+        <div class="col-1 d-lg-block d-none"></div>
       </section>
     </main>
-    <script src="./script.js"></script>
   </body>
+  <script src="./script.js"></script>
 </html>

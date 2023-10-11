@@ -22,24 +22,23 @@
 body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   color: var(--Marine-blue);
 }
+main {
+  background-color: var(--Magnolia);
+}
 
+section {
+  height: 80%;
+  background-color: var(--White);
+  border-radius: 0.5rem;
+  border: 0.5rem solid white;
+}
 nav {
   background-image: url(./Static/images/bg-sidebar-desktop.svg);
   background-position: center;
   background-size: cover;
-}
-.container-fluid {
-  background-color: var(--Light-gray);
-  height: 100vh;
-}
-.main-section {
-  background-color: var(--White);
-  border-radius: 0.5rem;
-  border: 0.5rem solid white;
-  min-height: 80%;
 }
 
 .step-num {
@@ -52,7 +51,7 @@ nav {
   justify-content: center;
 }
 #steps-bar {
-  background-image: url("images/bg-sidebar-desktop.svg");
+  background-image: url("Static/images/bg-sidebar-desktop.svg");
   background-position: center;
   background-size: cover;
   border-radius: 0.7rem;
@@ -84,6 +83,16 @@ p.step-num.active {
   color: var(--Cool-gray);
 }
 
+.user-detail {
+  position: relative;
+}
+span.error-span {
+  position: absolute;
+  right: 0;
+  color: red;
+  font-weight: bold;
+}
+
 .all-plans {
   display: flex;
   justify-content: space-between;
@@ -96,9 +105,13 @@ p.step-num.active {
   border: 1px solid #ccc;
   cursor: pointer;
   border-radius: 0.5rem;
-  padding: 0 0.6rem;
-  padding-top: 0.6rem;
-  margin-bottom: 1.6rem;
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.plan-option .option {
+  color: var(--Marine-blue);
+  font-weight: 700;
 }
 .plan-logo {
   margin-bottom: 3rem;
@@ -110,7 +123,9 @@ p.step-num.active {
   border-color: var(--Purplish-blue);
   background-color: var(--Magnolia);
 }
-
+.plan-price {
+  color: var(--Purplish-blue);
+}
 .toggle-year {
   background-color: var(--Magnolia);
   border-radius: 0.5rem;
@@ -128,91 +143,101 @@ p.step-num.active {
   color: var(--Marine-blue);
   font-weight: 700;
 }
+#plan-selected,
+#price {
+  color: var(--Marine-blue);
+  font-weight: 700;
+}
+#total-amount {
+  color: var(--Purplish-blue);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+#change-page-button {
+  color: var(--Cool-gray);
+}
+#change-page-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--Marine-blue);
+}
+.cadd-on-price {
+  color: var(--Marine-blue);
+}
+.clr-grey {
+  color: var(--Cool-gray);
+}
 .top-wrapper {
   padding: 0.5rem;
   background-color: var(--Magnolia);
 }
 
-#thank-you {
-  height: 100%;
-  margin: 0-auto;
-}
-.buttons {
-  position: relative;
-}
 #next-button {
   background-color: var(--Marine-blue);
-  color: var(--Magnolia);
-  position: absolute;
-  right: 0;
-  bottom: 0.3rem;
+  color: var(--White);
+  padding: 0.3rem;
 }
 #prev-button {
-  cursor: pointer;
-  color: var(--Magnolia);
-  font-weight: 800;
-  position: absolute;
-  left: 0;
-  bottom: 0.3rem;
+  color: var(--Marine-blue);
+  font-weight: 400;
 }
-#prev-button:hover {
+label {
+  /* color:var(--Purplish-blue) */
   color: var(--Marine-blue);
 }
 
-.clr-grey {
-  color: var(--Cool-gray);
-}
 
-/* ======================================= */
-@media (width<=764px) {
-  .main-section {
+/* =============================== Media Query ================================ */
+
+@media (width<=992px) {
+  main {
+    background-color: var(--White);
+
+    flex-grow: 1;
+  }
+  section {
+    flex-grow: 1;
+    height: 90%;
+    background-color: var(--Magnolia);
+    overflow-y: scroll;
     border: none;
+    border-radius: 0;
   }
-  .padding-col {
-    background-color: var(--Light-gray);
-  }
-  .forms-page-content {
-    background-color: var(--White);
-    z-index: 3445;
-    border-collapse: collapse;
-  }
-  .form-header-section {
-    transform: translateY(-6rem);
-    background-color: var(--White);
-    border: 3px solid var(--White);
-    border-radius: 0.6rem;
-    padding: 0.6rem;
-  }
-  .forms {
-    background-color: var(--White);
-  }
-
   nav {
-    background-image: url(./Static/images/bg-sidebar-mobile.svg);
+    height: 50%;
+  }
+  article {
+    height: 50%;
   }
   #steps-bar {
-    background-image: url("images/bg-sidebar-mobile.svg");
+    background-image: url("./Static/images/bg-sidebar-mobile.svg");
     background-position: center;
     background-size: cover;
-    height: 15rem;
     display: flex;
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
+    border: none;
     border-radius: 0%;
     padding: 0 !important;
   }
-  .buttons-inside {
-    display: none;
-  }
 
+  .page-header {
+    background-color: white;
+    transform: translateY(-5rem);
+    bottom: 5%;    
+    border-radius: 0.6rem;
+    padding: 1% !important;
+  }
   .step-detail {
     display: none;
   }
-  .step-wrapper {
+  .buttons {
+    height: 10%;
+    position: absolute;
+    bottom: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-items: center;
   }
 
   .all-plans {
@@ -232,5 +257,11 @@ p.step-num.active {
   }
   .plan-details {
     flex-grow: 1;
+  }
+
+  .step-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
