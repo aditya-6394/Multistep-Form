@@ -2,7 +2,7 @@
 
 This MultiStep Form is a web application created using HTML, CSS, JavaScript, and Bootstrap. It allows users to input information in a step-by-step fashion, making the process more manageable and user-friendly. This README provides an overview of the project, its features, and instructions for setting it up and customizing it to suit your needs.
 
-![Alt Text](./Static/images/active-states-step-1.jpg)
+![active-states-step-1](https://github.com/aditya-6394/Multistep-Form/assets/134168404/1559ef25-9109-434e-87f4-d34ceff7e4f6)
 
 ## Table of Contents
 
