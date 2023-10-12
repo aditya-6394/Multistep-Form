@@ -28,19 +28,29 @@
       title: "Pick add-ons",
       description: "Add-ons help enhance your gaming experience.",
       addons: [
-        { name: "Online Service", monthly: 1, yearly: 10 },
-        { name: "Large Storage", monthly: 2, yearly: 20 },
-        { name: "Customizable Profile", monthly: 2, yearly: 20 },
+        {
+          name: "Online Service",
+          id: "onlineServicePrice",
+          monthly: 1,
+          yearly: 10,
+        },
+        {
+          name: "Large Storage",
+          id: "localStoragePrice",
+          monthly: 2,
+          yearly: 20,
+        },
+        {
+          name: "Customizable Profile",
+          id: "customizableProfilePrice",
+          monthly: 2,
+          yearly: 20,
+        },
       ],
     },
     {
       title: "Finishing up",
       description: "Double-check everything looks OK before confirming.",
-      addons: [
-        { name: "Online Service", monthly: 1, yearly: 10 },
-        { name: "Large Storage", monthly: 2, yearly: 20 },
-        { name: "Customizable Profile", monthly: 2, yearly: 20 },
-      ],
     },
     {
       title: "Thank You",
@@ -172,7 +182,6 @@
 
   // Function for inserting plans logo
   function updatePlansLogo() {
-    console.log("printing from logos");
     const arcadeLogo = document.getElementById("arcade-logo");
     arcadeLogo.src = formPagesData[1]["plans"]["Arcade"].icon;
     const advanceLogo = document.getElementById("advance-logo");
@@ -186,6 +195,7 @@
     const target = event.target;
     if (target.classList.contains("plan-option-clicked")) {
       const selectedPlan = target.closest(".plan-option");
+      
       updatePlan(selectedPlan);
     }
   });
@@ -194,7 +204,7 @@
     const allPlansContainer = document.querySelector(".all-plans");
     const planId = clickedElement.id;
     userInputData.plan = planId;
-    const billingType = userInputData.billing;
+    const billingType = yearlyToggle.checked ? "yearly" : "monthly";
     const planPrice = formPagesData[1]["plans"][planId][billingType];
     const planOptions = allPlansContainer.querySelectorAll(".plan-option");
     planOptions.forEach((plan) => {
@@ -204,11 +214,8 @@
         plan.classList.remove("selected");
       }
     });
-
-    const billingDuration = userInputData.billing;
     userInputData["plan"] = planId;
-    userInputData["planPrice"] =
-      formPagesData[1]["plans"][planId][billingDuration];
+    userInputData["planPrice"] = planPrice;    
   }
 
   // Event listner for toggler
@@ -239,6 +246,8 @@
         userInputData["billing"] = "monthly";
       }
     }
+    const addOnsContainer = document.getElementById("add-ons-selected");
+    addOnsContainer.innerHTML = "";
   }
 
   // ============================== For Add Ons ================================
@@ -272,6 +281,7 @@
         }
       }
     }
+   
   }
   // For changine Add On prices based on toggle:
   function addOnPrices() {
@@ -307,20 +317,15 @@
     const totalHeader = document.querySelector(".total-header");
     const totalSum = document.querySelector(".total-sum");
 
-    addOnsContainer.innerHTML = "";
-
-    if ((userInputData.billing = "monthly")) {
-    }
-
     const planPrice = document.getElementById("price");
     if (userInputData.billing === "yearly") {
       planSelected.innerHTML = `${userInputData.plan}(Yearly)`;
       planPrice.innerHTML = `$${userInputData.planPrice}/yr`;
-      totalHeader.innerHTML = "Total(per month)";
+      totalHeader.innerHTML = "Total(per year)";
     } else {
       planSelected.innerHTML = `${userInputData.plan}(Monthly)`;
       planPrice.innerHTML = `$${userInputData.planPrice}/mo`;
-      totalHeader.innerHTML = "Total(per year)";
+      totalHeader.innerHTML = "Total(per month)";
     }
     const allAddOns = userInputData.addOns;
     let totalBillPrice = userInputData.planPrice;
@@ -335,7 +340,7 @@
         addOnName.innerHTML = addOn;
         formPagesData[2].addons.forEach((value) => {
           if (value.name === addOn) {
-            if ((userInputData.billing = "yearly")) {
+            if (userInputData.billing === "yearly") {
               addOnPrice.innerHTML = `+$${value.yearly}/yr`;
               totalBillPrice += value.yearly;
               totalSum.innerHTML = `${totalBillPrice}/yr`;
@@ -346,6 +351,7 @@
             }
           }
         });
+       
         addOnRow.append(addOnName, addOnPrice);
         addOnsContainer.appendChild(addOnRow);
       }
