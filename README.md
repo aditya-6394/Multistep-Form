@@ -1,8 +1,9 @@
 # MultiStep Form README
 
-This MultiStep Form is a web application created using HTML, CSS, JavaScript, and Bootstrap. It allows users to input information in a step-by-step fashion, making the process more manageable and user-friendly. This README provides an overview of the project, its features, and instructions for setting it up and customizing it to suit your needs.
+This MultiStep Form is a web application created using HTML, CSS, JavaScript, and **Bootstrap**. It allows users to input information in a step-by-step fashion, making the process more manageable and user-friendly. This README provides an overview of the project, its features, and instructions for setting it up and customizing it to suit your needs.
+[Visit Deoployed Project](https://multistep-form-mu.vercel.app/)
 
-![Alt Text](./Static/images/active-states-step-1.jpg)
+![active-states-step-1](https://github.com/aditya-6394/Multistep-Form/assets/134168404/1559ef25-9109-434e-87f4-d34ceff7e4f6)
 
 ## Table of Contents
 
@@ -33,7 +34,7 @@ To get started with the MultiStep Form, follow these steps:
 1. **Clone the Repository**: You can clone this repository using Git:
 
    ```shell
-   git clone https://github.com/aditya-6394/multistep-form.git
+   git clone https://github.com/aditya-6394/multistep-form_Bootstrap.git
    ```
 
 2. **Navigate to the Project Folder**:
@@ -87,3 +88,5 @@ If you'd like to contribute to this project or report issues, please follow thes
    ```
 
 5. Create a Pull Request to merge your changes into the main repository.
+
+https://vercel.com/aditya-6394s-projects/multistep-form
